@@ -45,6 +45,7 @@ import UploadStoreData from './components/admin/upload-store-data';
 import UploadProductData from './components/admin/upload-product-data';
 import SearchResultHome from './components/search/search-result-home';
 import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 // Component mapping
 const componentMap = {
   Home,
@@ -98,7 +99,8 @@ const App = () => {
     <QueryClientProvider client={new QueryClient()}>
       <Provider store={store}>
         <ApiDataProvider>
-          <HashRouter>
+          {/* <HashRouter> */}
+          <BrowserRouter>
             {/* <Router> */}
               <Routes>
                 <Route path='/' element={<Layout children={<Home />} />} />
@@ -108,7 +110,8 @@ const App = () => {
                 })}
               </Routes>
             {/* </Router> */}
-          </HashRouter>
+          </BrowserRouter>
+          {/* </HashRouter> */}
         </ApiDataProvider>
       </Provider>
     </QueryClientProvider>
